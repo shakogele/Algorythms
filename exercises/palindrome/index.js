@@ -7,6 +7,26 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  let array = str.split('');
+  return array.every( (singleChar, index) =>{
+      return singleChar === array[ array.length - (index + 1) ]
+  });
+}
 
 module.exports = palindrome;
+
+// first Solution
+//
+// function palindrome(str) {
+//   let reversedString = str.split('').reverse().join("");
+//   return reversedString === str;
+// }
+
+// Bad solution - mezareba tore loop unda gayo 2 ze
+// function palindrome(str) {
+//   let array = str.split('');
+//   return array.every( (singleChar, index) =>{
+//       return singleChar === array[ array.length - (index + 1) ]
+//   });
+// }
